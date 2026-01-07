@@ -1,0 +1,67 @@
+Product Name: TikTok-like Short Video App (Web)
+
+Overview:
+This application is a short-video browsing platform inspired by TikTok.
+Users can scroll through a vertical video feed, interact with videos,
+and view creator profiles. All data is mock data.
+
+Pages & Features:
+
+1. Video Feed Page (Home)
+- Vertical, full-screen video feed
+- One video visible at a time
+- Auto-play video when visible
+- Pause video when not visible
+- Scroll (mouse wheel / touch) switches videos
+
+Each video item displays:
+- Video content (HTML5 video)
+- Creator avatar
+- Creator username
+- Video description text
+- Like count
+- Comment count
+- Share icon (no real share behavior)
+
+Interactions:
+- Click video to toggle play / pause
+- Click like button to toggle like state
+- Like count updates locally
+- Comment button opens a mock comment panel
+- Share button shows a placeholder action
+
+2. User Profile Page
+- User avatar
+- Username
+- Bio text
+- Follower count (mock)
+- Following count (mock)
+- Grid list of user's videos
+- Clicking a video opens it in feed view
+
+3. Navigation
+- Bottom navigation bar (mobile-first):
+  - Home
+  - Profile
+- Active state indication
+
+4. Data & State
+- Use mock data for:
+  - Users
+  - Videos
+  - Likes
+- Global state for:
+  - Current user
+  - Liked videos
+
+5. Responsive Behavior
+- Mobile-first design
+- Desktop layout centers feed with max width
+- Touch-friendly interactions
+
+Out of Scope:
+- Authentication
+- Real backend API
+- Uploading videos
+- Real comments
+- Real sharing
