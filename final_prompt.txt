@@ -1,0 +1,124 @@
+Prompt 
+UI Case (TikTok-like Short Video App)
+You are a senior front-end developer specializing in Vue 3, TypeScript, and modern web application architecture.
+Your task is to build a complete, production-ready TikTok-like short video web application from scratch, based strictly on the specifications provided in input_ui_spec.txt.
+This is a UI Case evaluation focusing on:
+- App creation from scratch
+- Complex feed-based UI
+- Interactive user flows
+- Front-end architecture
+- TypeScript correctness
+- State management
+- Responsiveness and accessibility
+- Ability to follow a detailed product specification exactly
+──────────────────────────────────── Technical Requirements ────────────────────────────────────
+- Framework: Vue 3 (Composition API) + TypeScript
+- Build Tool: Vite
+- Styling: Tailwind CSS or CSS Modules (your choice)
+- Package Manager: pnpm
+- Routing: Vue Router (if multi-page)
+- State Management: Pinia or Vue reactive store
+- API: No real backend (use mock data only)
+- Video: HTML5 video (mock video URLs)
+──────────────────────────────────── Your Responsibilities ────────────────────────────────────
+1.Read & Analyze Specification
+- Read input_ui_spec.txt thoroughly before writing any code
+- Identify all required pages, components, and interactions
+- Understand TikTok-style user flows (feed, interactions, profile)
+- Do NOT assume features not explicitly described
+2.Generate a Complete Working Project You MUST generate a fully functional Vue 3 + TypeScript project, including:
+Configuration files:
+- package.json
+- tsconfig.json (strict mode enabled)
+- vite.config.ts
+Role & Objective:
+- Act as a senior front-end engineer to build a complete, production-ready TikTok-like short video web application in a single pass.
+
+Inputs & Context:
+- Specification file: input_ui_spec.txt (defines product requirements; read it fully before coding).
+- Tech stack: Vue 3 with Composition API + TypeScript (strict mode), Vite, pnpm, Tailwind CSS or CSS Modules (choose one), Vue Router, Pinia (or Vue reactive store), HTML5 video with mock URLs, all mock data only (no real backend).
+- Workspace: current working directory; create required project files and folders as specified.
+
+Step-by-Step Instructions:
+1) Read input_ui_spec.txt completely to capture all required pages, interactions, and constraints; do not add features beyond the spec.
+2) Scaffold a Vue 3 + TypeScript + Vite project using pnpm with the required structure: package.json, tsconfig.json (strict), tsconfig.node.json, vite.config.ts, index.html, tailwind/postcss configs, and src/ with components/, pages/, router/, store/, types/, utils/, data/, App.vue, main.ts, global styles.
+3) Define strong TypeScript types for users, videos, interactions; prohibit any usage of any.
+4) Implement mock data for users, videos, likes, and comments per the spec.
+5) Implement Pinia (or Vue reactive) global state for current user, liked videos, current video index, and any needed getters/actions.
+6) Build required UI:
+  - Video Feed page: vertical, full-screen, one-at-a-time feed; auto-play when visible, pause when offscreen; click to play/pause; scroll/touch to switch; like/comment/share interactions (mock); show creator avatar/username/description/like count/comment count; comment button opens mock comment panel; share triggers placeholder action; keyboard navigation for up/down.
+  - User Profile page: avatar, username, bio, follower/following counts (mock), grid of user videos; clicking a video opens it in feed view.
+  - Navigation: bottom nav with Home/Profile, active state indication, mobile-first, desktop centers feed with max width; touch-friendly.
+7) Styling & accessibility: mobile-first responsive layout; semantic HTML; keyboard-accessible controls; aria-labels where appropriate.
+8) Ensure build and runtime correctness: configure scripts (pnpm dev/build/preview/type-check); fix any TypeScript and config issues so vite.config.ts resolves node:url; ensure Tailwind setup compiles without blocking build; ensure page renders correctly (no blank screen).
+9) Documentation: create README.md covering overview, TikTok-like features, tech stack, installation (pnpm install), dev (pnpm dev), build (pnpm build), project structure, core user flows, manual UI validation steps, known limitations.
+10) Evaluation report: generate evaluation_report.json with required schema (metadata with ISO test_date, spec_file=input_ui_spec.txt, agent_model=<model_name>; scores fields; pages_implemented; features_implemented; features_missing; files_generated; validation_status; notes).
+
+Output Specification:
+- Write all project files to the workspace with the required structure and content; ensure pnpm install && pnpm dev works.
+- Produce README.md and evaluation_report.json matching the spec fields.
+- No multi-turn dialogue; deliver the complete solution in one response.
+
+Constraints & Preferences:
+- Composition API only; no Options API.
+- TypeScript strict mode; no any.
+- Use mock data only; no real backend or auth.
+- Maintain responsive, mobile-first design with centered desktop feed.
+- Use angle-bracket placeholders for environment-dependent values if any (<API_KEY>, etc.).
+
+Quality Gates:
+- All TypeScript checks pass (vue-tsc/type-check script).
+- Vite dev server and build succeed without errors.
+- UI renders the feed and profile correctly (no blank/failed display).
+- Required interactions (auto-play/pause, like toggle, comment panel, share placeholder, navigation, keyboard up/down) work as specified.
+- Accessibility basics verified (aria labels, keyboard focusable controls).
+- README and evaluation_report.json present and complete.
+- Do not request further input; complete all steps in this single turn.
+
+Critical instruction: Process only the specification in input_ui_spec.txt and the above requirements; do not rely on prior conversation or request additional turns.
+- Build instructions (pnpm build)
+- Project structure explanation
+- Core user flows
+- Manual UI validation steps
+- Known limitations
+6.Generate Evaluation Report You MUST generate evaluation_report.json using this structure:
+{
+  "metadata": {
+    "test_date": "ISO timestamp",
+    "spec_file": "input_ui_spec.txt",
+    "agent_model": "model_name"
+  },
+  "scores": {
+    "ui_completeness": 0,
+    "architecture": 0,
+    "typescript_quality": 0,
+    "state_management": 0,
+    "responsiveness": 0,
+    "accessibility": 0,
+    "overall_score": 0
+  },
+  "pages_implemented": [],
+  "features_implemented": [],
+  "features_missing": [],
+  "files_generated": [],
+  "validation_status": "PASS/FAIL",
+  "notes": ""
+}
+──────────────────────────────────── Strict Rules for the Agent ──────────────────────────────────── 
+MUST DO:
+- Read entire input_ui_spec.txt before starting
+- Generate ALL required files for a working project
+- Use Vue 3 + TypeScript strictly
+- Implement ALL features defined in the specification
+- Ensure pnpm install && pnpm dev works
+- Create responsive, interactive UI
+- Use mock data where APIs are not specified
+- Generate README.md and evaluation_report.json
+MUST NOT:
+- Skip features mentioned in spec
+- Hallucinate features not in spec
+- Use Options API instead of Composition API
+- Use JavaScript instead of TypeScript
+- Ignore mobile experience
+- Use any
+- Output incomplete or partial projects
